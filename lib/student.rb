@@ -35,7 +35,9 @@ class Student
     WHERE grade = 9
     SQL
 
-    return looping
+    answer = looping
+    answer
+
 
     # DB[:conn].execute(sql).map do |row|
     #   self.new_from_db(row)
