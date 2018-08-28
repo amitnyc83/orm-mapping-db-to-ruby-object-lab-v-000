@@ -22,11 +22,6 @@ class Student
   end
 
 
-  def looping
-    DB[:conn].execute(sql).map do |row|
-      self.new_from_db(row)
-    end
-  end
 
   def self.all_students_in_grade_9
     sql = <<-SQL
@@ -35,13 +30,9 @@ class Student
     WHERE grade = 9
     SQL
 
-    answer = looping
-    answer
-
-
-    # DB[:conn].execute(sql).map do |row|
-    #   self.new_from_db(row)
-    # end
+    DB[:conn].execute(sql).map do |row|
+      self.new_from_db(row)
+    end
   end
 
 
